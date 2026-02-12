@@ -1,0 +1,474 @@
+﻿cargo : warning: unused import: 
+`PublicIdentity`
+At line:1 char:1
++ cargo check --lib 2>&1 | Out-File -Encoding 
+utf8 check_log_2.txt
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+(warnin    g: unused import: 
+`PublicIdentity`:String) [],     
+RemoteException
+    + FullyQualifiedErrorId : 
+NativeCommandError
+ 
+ --> core_crypto\src\lifecycle.rs:4:33
+  |
+4 | ...:{Identity, PublicIdentity};
+  |                ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> core_crypto\src\lifecycle.rs:161:22
+    |
+161 | ...me((mut identity, metadata)) = 
+self.i...
+    |        ----^^^^^^^^
+    |        |
+    |        help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: `metadata`
+   --> core_crypto\src\lifecycle.rs:161:36
+    |
+161 | ... identity, metadata)) = 
+self.identiti...
+    |               ^^^^^^^^ help: if this is 
+intentional, prefix it with an underscore: 
+`_metadata`
+    |
+    = note: `#[warn(unused_variables)]` (part 
+of `#[warn(unused)]`) on by default
+
+warning: field `storage` is never read
+   --> core_crypto\src\lifecycle.rs:110:5
+    |
+107 | pub struct IdentityLifecycleManager {
+    |            ------------------------ 
+field in this struct
+...
+110 |     storage: Box<dyn SecureStorage>,
+    |     ^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: `core_crypto` (lib) generated 4 
+warnings (run `cargo fix --lib -p core_crypto` 
+to apply 3 suggestions)
+warning: unused import: `RelayRole`
+ --> onion_routing\src\selection.rs:1:31
+  |
+1 | use crate::relay::{RelayNode, RelayRole};
+  |                               ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused import: `std::thread`
+ --> onion_routing\src\traffic.rs:2:5
+  |
+2 | use std::thread;
+  |     ^^^^^^^^^^^
+
+warning: unused import: `PacketSize`
+ --> onion_routing\src\crypto.rs:8:57
+  |
+8 | ...WithMetadata, PacketSize};
+  |                  ^^^^^^^^^^
+
+warning: variable does not need to be mutable
+  --> onion_routing\src\selection.rs:41:13
+   |
+41 | ...   let mut valid_candidates: 
+Vec<&Rela...
+   |           ----^^^^^^^^^^^^^^^^
+   |           |
+   |           help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: constant `MAX_PAYLOAD_MEDIUM` is 
+never used
+  --> onion_routing\src\circuit.rs:97:15
+   |
+97 | ...   const MAX_PAYLOAD_MEDIUM: usize = 
+9...
+   |             ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: constant `MAX_PAYLOAD_LARGE` is never 
+used
+  --> onion_routing\src\circuit.rs:98:15
+   |
+98 | ...   const MAX_PAYLOAD_LARGE: usize = 
+39...
+   |             ^^^^^^^^^^^^^^^^^
+
+warning: field `target_rate_mbps` is never read
+  --> onion_routing\src\traffic.rs:30:5
+   |
+29 | pub struct TrafficScheduler {
+   |            ---------------- field in this 
+struct
+30 |     target_rate_mbps: u32,
+   |     ^^^^^^^^^^^^^^^^
+
+warning: field `circuit_id` is never read
+  --> onion_routing\src\traffic_shaper.rs:13:5
+   |
+ 9 | pub struct TrafficShaper {
+   |            ------------- field in this 
+struct
+...
+13 |     circuit_id: u64,
+   |     ^^^^^^^^^^
+   |
+   = note: `TrafficShaper` has derived impls 
+for the traits `Clone` and `Debug`, but these 
+are intentionally ignored during dead code 
+analysis
+
+warning: `onion_routing` (lib) generated 8 
+warnings (run `cargo fix --lib -p 
+onion_routing` to apply 4 suggestions)
+warning: unused imports: `Duration` and 
+`Instant`
+ --> sharding\src\transport.rs:3:17
+  |
+3 | use std::time::{Duration, Instant};
+  |                 ^^^^^^^^  ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused import: 
+`onion_routing::relay::RelayNode`
+ --> sharding\src\circuit_pool.rs:2:5
+  |
+2 | use onion_routing::relay::RelayNode;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `crate::shard::Shard`
+ --> sharding\src\multi_sender.rs:5:5
+  |
+5 | use crate::shard::Shard;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: field `min_healthy` is never read
+  --> sharding\src\circuit_pool.rs:16:5
+   |
+ 8 | pub struct CircuitPool {
+   |            ----------- field in this 
+struct
+...
+16 |     min_healthy: usize,
+   |     ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: `sharding` (lib) generated 4 warnings 
+(run `cargo fix --lib -p sharding` to apply 3 
+suggestions)
+warning: unused import: `types::*`
+ --> messaging\src\private\x3dh.rs:6:23
+  |
+6 | use crate::{error::*, types::*};
+  |                       ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused import: `prekey_bundle::*`
+  --> messaging\src\private\mod.rs:10:9
+   |
+10 | pub use prekey_bundle::*;
+   |         ^^^^^^^^^^^^^^^^
+
+warning: unused import: `group_message::*`
+ --> messaging\src\wire\mod.rs:6:9
+  |
+6 | pub use group_message::*;
+  |         ^^^^^^^^^^^^^^^^
+
+warning: unused import: `private_message::*`
+ --> messaging\src\wire\mod.rs:7:9
+  |
+7 | pub use private_message::*;
+  |         ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `transport_adapter::*`
+ --> messaging\src\integration\mod.rs:6:9
+  |
+6 | pub use transport_adapter::*;
+  |         ^^^^^^^^^^^^^^^^^^^^
+
+warning: fields `group_point` and 
+`blinded_point` are never read
+  --> messaging\src\group\discovery.rs:20:5
+   |
+16 | pub struct VoprfClient {
+   |            ----------- fields in this 
+struct
+...
+20 |     group_point: RistrettoPoint,
+   |     ^^^^^^^^^^^
+21 |     /// Blinded point sent to server
+22 |     blinded_point: RistrettoPoint,
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: `messaging` (lib) generated 6 
+warnings (run `cargo fix --lib -p messaging` 
+to apply 5 suggestions)
+warning: unused import: `NodeId`
+ --> offline_mesh\src\packet.rs:3:20
+  |
+3 | use crate::types::{NodeId, PacketId};
+  |                    ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused import: `MeshError`
+ --> offline_mesh\src\router.rs:3:20
+  |
+3 | use crate::error::{MeshError, Result};
+  |                    ^^^^^^^^^
+
+warning: unused import: `MAX_TTL`
+ --> offline_mesh\src\router.rs:4:33
+  |
+4 | use crate::packet::{MeshPacket, MAX_TTL};
+  |                                 ^^^^^^^
+
+warning: unused import: `Key`
+ --> offline_mesh\src\store.rs:8:23
+  |
+8 |     ChaCha20Poly1305, Key, Nonce,
+  |                       ^^^
+
+warning: unused import: `PeerId`
+  --> offline_mesh\src\service.rs:11:42
+   |
+11 | ..., Capabilities, PeerId};
+   |                    ^^^^^^
+
+warning: unused import: `tokio::time`
+  --> offline_mesh\src\service.rs:16:5
+   |
+16 | use tokio::time;
+   |     ^^^^^^^^^^^
+
+warning: field `config` is never read
+  --> offline_mesh\src\service.rs:51:5
+   |
+50 | pub struct MeshService {
+   |            ----------- field in this 
+struct
+51 |     config: MeshConfig,
+   |     ^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: constant `MAX_ADV_PAYLOAD` is never 
+used
+  --> offline_mesh\src\ble.rs:24:7
+   |
+24 | const MAX_ADV_PAYLOAD: usize = 31;
+   |       ^^^^^^^^^^^^^^^
+
+warning: `offline_mesh` (lib) generated 8 
+warnings (run `cargo fix --lib -p 
+offline_mesh` to apply 6 suggestions)
+    Checking desktop v0.1.0 
+(D:\annonymust\desktop\src-tauri)
+warning: unused import: `DateTime`
+ --> 
+desktop\src-tauri\src\group_manager.rs:6:14
+  |
+6 | use chrono::{DateTime, Utc};
+  |              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused import: `GroupInfo`
+ --> 
+desktop\src-tauri\src\group_manager.rs:7:24
+  |
+7 | use messaging::group::{GroupInfo, 
+GroupState, SenderKeyState};
+  |                        ^^^^^^^^^
+
+warning: unused import: `Context`
+ --> 
+desktop\src-tauri\src\file_transfer.rs:5:14
+  |
+5 | use anyhow::{Context, Result};
+  |              ^^^^^^^
+
+warning: unused imports: `MessageSplitter` and 
+`Shard`
+  --> 
+desktop\src-tauri\src\file_transfer.rs:10:16
+   |
+10 | use sharding::{MessageSplitter, 
+SecurityLevel, Shard};
+   |                ^^^^^^^^^^^^^^^            
+     ^^^^^
+
+warning: unused import: `AsyncWriteExt`
+  --> 
+desktop\src-tauri\src\file_transfer.rs:15:31
+   |
+15 | use tokio::io::{AsyncReadExt, 
+AsyncWriteExt};
+   |                               
+^^^^^^^^^^^^^
+
+warning: unused import: 
+`messaging::types::PeerId`
+ --> 
+desktop\src-tauri\src\circuit_manager.rs:6:5
+  |
+6 | use messaging::types::PeerId;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Mutex`
+  --> 
+desktop\src-tauri\src\message_router.rs:11:22
+   |
+11 | use std::sync::{Arc, Mutex};
+   |                      ^^^^^
+
+warning: unused imports: `TcpListener` and 
+`TcpStream`
+ --> desktop\src-tauri\src\simple_mesh.rs:6:16
+  |
+6 | use std::net::{TcpListener, TcpStream, 
+SocketAddr};
+  |                ^^^^^^^^^^^  ^^^^^^^^^
+
+warning: unused import: 
+`crate::group_manager::GroupManager`
+ --> desktop\src-tauri\src\mesh_init.rs:5:5
+  |
+5 | use crate::group_manager::GroupManager;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: 
+`crate::file_transfer::FileTransferManager`
+ --> desktop\src-tauri\src\mesh_init.rs:6:5
+  |
+6 | use 
+crate::file_transfer::FileTransferManager;
+  |     
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: 
+`crate::circuit_manager::CircuitManager`
+ --> desktop\src-tauri\src\mesh_init.rs:7:5
+  |
+7 | use crate::circuit_manager::CircuitManager;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Mutex`
+ --> desktop\src-tauri\src\mesh_init.rs:9:22
+  |
+9 | use std::sync::{Arc, Mutex};
+  |                      ^^^^^
+
+error[E0599]: no method named `lock` found for 
+struct `CircuitManager` in the current scope
+   --> 
+desktop\src-tauri\src\message_router.rs:239:49
+    |
+239 |         let manager_lock = 
+self.circuit_manager.lock().unwrap();
+    |                                          
+       ^^^^ method not found in 
+`CircuitManager`
+    |
+   ::: 
+desktop\src-tauri\src\circuit_manager.rs:30:1
+    |
+ 30 | pub struct CircuitManager {
+    | ------------------------- method `lock` 
+not found for this struct
+    |
+    = help: items from traits can only be used 
+if the trait is implemented and in scope
+    = note: the following trait defines an 
+item `lock`, perhaps you need to implement it:
+            candidate #1: 
+`lock_api::mutex::RawMutex`
+
+warning: unused variable: `index`
+   --> 
+desktop\src-tauri\src\file_transfer.rs:327:14
+    |
+327 |         for (index, data) in chunks {
+    |              ^^^^^ help: if this is 
+intentional, prefix it with an underscore: 
+`_index`
+    |
+    = note: `#[warn(unused_variables)]` (part 
+of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> 
+desktop\src-tauri\src\circuit_manager.rs:167:13
+    |
+167 |         let mut circuit = 
+Circuit::new(cid, hops)
+    |             ----^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: `circuit`
+   --> 
+desktop\src-tauri\src\circuit_manager.rs:266:13
+    |
+266 |         let circuit = 
+circuits.get(&circuit_id)
+    |             ^^^^^^^ help: if this is 
+intentional, prefix it with an underscore: 
+`_circuit`
+
+warning: unused variable: `transfer_id`
+   --> 
+desktop\src-tauri\src\message_router.rs:147:9
+    |
+147 |         transfer_id: uuid::Uuid,
+    |         ^^^^^^^^^^^ help: if this is 
+intentional, prefix it with an underscore: 
+`_transfer_id`
+
+warning: unused variable: `encrypted_content`
+   --> 
+desktop\src-tauri\src\message_router.rs:215:9
+    |
+215 |         encrypted_content: Vec<u8>,
+    |         ^^^^^^^^^^^^^^^^^ help: if this 
+is intentional, prefix it with an underscore: 
+`_encrypted_content`
+
+For more information about this error, try 
+`rustc --explain E0599`.
+warning: `desktop` (lib) generated 17 warnings
+error: could not compile `desktop` (lib) due 
+to 1 previous error; 17 warnings emitted
